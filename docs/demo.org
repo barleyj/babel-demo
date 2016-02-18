@@ -1,0 +1,23 @@
+#+BEGIN_SRC python :exports none :tangle yes
+  import urllib2
+  import json
+
+  def get_repos_for(user):
+      results = urllib2.urlopen('https://api.github.com/users/{}/repos'.format('barleyj'))
+      content = results.read()
+      repos = json.loads(content)
+      return [repo['name'] for repo in repos]
+#+END_SRC
+
+
+#+BEGIN_SRC python :tangle no :exports none :results none :session demo
+  import sys, os
+  sys.path.append('/Users/jayson.barley/development/babel-demo/demo')
+#+END_SRC
+
+#+BEGIN_SRC python :tangle no :exports both :results output code :session demo
+  from demo import get_repos_for
+
+  get_repos_for('barleyj')
+#+END_SRC
+

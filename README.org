@@ -1,0 +1,3 @@
+* Emacs org-mode demo
+This is one of the resons I love Emacs. The power of it as an editor is outstanding. It provides a complete development environment for me. With it, I'm able to keep my source code and my documentation in the same file. I can extract the source code and generate the documentation using executable code blocks. If I need to insert links or images into my documentation I can. 
+
