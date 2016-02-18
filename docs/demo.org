@@ -1,7 +1,10 @@
+#+SETUPFILE: theme-readtheorg.setup
+#+PROPERTY: tangle ../demo/demo.py
+
 * Purpose
 This is a simple demo to show that org-mode can extract source code from an document and then re-use that code in the documentation.
 
-#+BEGIN_SRC python :exports none :tangle yes
+#+BEGIN_SRC python :exports none
   import urllib2
   import json
 
