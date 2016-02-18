@@ -1,9 +1,12 @@
+* Purpose
+This is a simple demo to show that org-mode can extract source code from an document and then re-use that code in the documentation.
+
 #+BEGIN_SRC python :exports none :tangle yes
   import urllib2
   import json
 
   def get_repos_for(user):
-      results = urllib2.urlopen('https://api.github.com/users/{}/repos'.format('barleyj'))
+      results = urllib2.urlopen('https://api.github.com/users/{}/repos'.format(user))
       content = results.read()
       repos = json.loads(content)
       return [repo['name'] for repo in repos]
@@ -15,9 +18,10 @@
   sys.path.append('/Users/jayson.barley/development/babel-demo/demo')
 #+END_SRC
 
+** How to use
+To use this "library" enter the username that you wish to get list of repos for.
 #+BEGIN_SRC python :tangle no :exports both :results output code :session demo
   from demo import get_repos_for
 
   get_repos_for('barleyj')
 #+END_SRC
-
